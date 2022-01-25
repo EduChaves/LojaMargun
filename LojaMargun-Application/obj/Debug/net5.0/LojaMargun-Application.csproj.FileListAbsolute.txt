@@ -1,0 +1,12 @@
+E:\things\dev\Margun\LojaMargun\LojaMargun-Application\bin\Debug\net5.0\LojaMargun-Application.deps.json
+E:\things\dev\Margun\LojaMargun\LojaMargun-Application\bin\Debug\net5.0\LojaMargun-Application.dll
+E:\things\dev\Margun\LojaMargun\LojaMargun-Application\bin\Debug\net5.0\ref\LojaMargun-Application.dll
+E:\things\dev\Margun\LojaMargun\LojaMargun-Application\bin\Debug\net5.0\LojaMargun-Application.pdb
+E:\things\dev\Margun\LojaMargun\LojaMargun-Application\obj\Debug\net5.0\LojaMargun-Application.csproj.AssemblyReference.cache
+E:\things\dev\Margun\LojaMargun\LojaMargun-Application\obj\Debug\net5.0\LojaMargun-Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\things\dev\Margun\LojaMargun\LojaMargun-Application\obj\Debug\net5.0\LojaMargun-Application.AssemblyInfoInputs.cache
+E:\things\dev\Margun\LojaMargun\LojaMargun-Application\obj\Debug\net5.0\LojaMargun-Application.AssemblyInfo.cs
+E:\things\dev\Margun\LojaMargun\LojaMargun-Application\obj\Debug\net5.0\LojaMargun-Application.csproj.CoreCompileInputs.cache
+E:\things\dev\Margun\LojaMargun\LojaMargun-Application\obj\Debug\net5.0\LojaMargun-Application.dll
+E:\things\dev\Margun\LojaMargun\LojaMargun-Application\obj\Debug\net5.0\ref\LojaMargun-Application.dll
+E:\things\dev\Margun\LojaMargun\LojaMargun-Application\obj\Debug\net5.0\LojaMargun-Application.pdb

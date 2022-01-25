@@ -1,5 +1,21 @@
 {
   "Version": 1,
-  "ProjectMap": {},
-  "NextColorIndex": 0
+  "ProjectMap": {
+    "2f0d851f-ce75-4c07-8716-31dfce20aafc": {
+      "ProjectGuid": "2f0d851f-ce75-4c07-8716-31dfce20aafc",
+      "DisplayName": "LojaMargun-Domain",
+      "ColorIndex": 0
+    },
+    "fe3a8e4b-367b-4147-8531-02ff2a67b87e": {
+      "ProjectGuid": "fe3a8e4b-367b-4147-8531-02ff2a67b87e",
+      "DisplayName": "LojaMargun-Infrastructure",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Arquivos Diversos",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 2
 }
