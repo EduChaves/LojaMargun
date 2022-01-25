@@ -9,5 +9,6 @@ namespace LojaMargun_Domain.Entities
         public User User { get; set; }
         public int BagId { get; set; }
         public Bag Bag { get; set; }
+        public bool Active { get; set; }
     }
 }
