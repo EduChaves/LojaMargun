@@ -5,8 +5,8 @@ namespace LojaMargun_Infrastructure.Data.Repositories
 {
     public class SaleRepository : Repository<Sale>, ISaleRepository
     {
-        public SaleRepository(Context context) : base(context)
-        {
-        }
+        private readonly Context _context;
+
+        public SaleRepository(Context context) : base(context) => _context = context;
     }
 }

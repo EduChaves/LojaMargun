@@ -5,8 +5,8 @@ namespace LojaMargun_Infrastructure.Data.Repositories
 {
     public class BagRepository : Repository<Bag>, IBagRepository
     {
-        public BagRepository(Context context) : base(context)
-        {
-        }
+        private readonly Context _context;
+
+        public BagRepository(Context context) : base(context) => _context = context;
     }
 }

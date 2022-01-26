@@ -5,8 +5,8 @@ namespace LojaMargun_Infrastructure.Data.Repositories
 {
     public class UserRepository : Repository<User>, IUserRepository
     {
-        public UserRepository(Context context) : base(context)
-        {
-        }
+        private readonly Context _context;
+
+        public UserRepository(Context context) : base(context) => _context = context;
     }
 }

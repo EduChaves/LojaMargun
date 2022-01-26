@@ -7,7 +7,7 @@ namespace LojaMargun_Domain.Entities
         public string Name { get; set; }
         public string Length { get; set; }
         public byte Image { get; set; }
-        public int Status { get; set; }
+        public int Active { get; set; }
         public double Value { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }

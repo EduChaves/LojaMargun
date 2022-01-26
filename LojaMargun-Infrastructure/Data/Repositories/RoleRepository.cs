@@ -5,8 +5,8 @@ namespace LojaMargun_Infrastructure.Data.Repositories
 {
     public class RoleRepository : Repository<Role>, IRoleRepository
     {
-        public RoleRepository(Context context) : base(context)
-        {
-        }
+        private readonly Context _context;
+
+        public RoleRepository(Context context) : base(context) => _context= context;
     }
 }

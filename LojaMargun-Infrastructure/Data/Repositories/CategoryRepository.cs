@@ -5,8 +5,8 @@ namespace LojaMargun_Infrastructure.Data.Repositories
 {
     public class CategoryRepository : Repository<Category>, ICategoryRepository
     {
-        public CategoryRepository(Context context) : base(context)
-        {
-        }
+        private readonly Context _context;
+     
+        public CategoryRepository(Context context) : base(context) => _context = context;
     }
 }
