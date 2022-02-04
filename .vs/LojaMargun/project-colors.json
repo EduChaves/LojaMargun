@@ -15,7 +15,17 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Arquivos Diversos",
       "ColorIndex": -1
+    },
+    "e5596241-31e9-48c1-a27d-241d44d666bd": {
+      "ProjectGuid": "e5596241-31e9-48c1-a27d-241d44d666bd",
+      "DisplayName": "LojaMargun-API",
+      "ColorIndex": 2
+    },
+    "4a2645de-3430-46fc-a779-ea8e05c8c78e": {
+      "ProjectGuid": "4a2645de-3430-46fc-a779-ea8e05c8c78e",
+      "DisplayName": "LojaMargun-Application",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 4
 }

@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31717.71
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaMargun-API", "LojaMargun-API\LojaMargun-API.csproj", "{E5596241-31E9-48C1-A27D-241D44D666BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LojaMargun-Application", "LojaMargun-Application\LojaMargun-Application.csproj", "{4A2645DE-3430-46FC-A779-EA8E05C8C78E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaMargun-Application", "LojaMargun-Application\LojaMargun-Application.csproj", "{4A2645DE-3430-46FC-A779-EA8E05C8C78E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LojaMargun-Domain", "LojaMargun-Domain\LojaMargun-Domain.csproj", "{2F0D851F-CE75-4C07-8716-31DFCE20AAFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaMargun-Domain", "LojaMargun-Domain\LojaMargun-Domain.csproj", "{2F0D851F-CE75-4C07-8716-31DFCE20AAFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LojaMargun-Infrastructure", "LojaMargun-Infrastructure\LojaMargun-Infrastructure.csproj", "{FE3A8E4B-367B-4147-8531-02FF2A67B87E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaMargun-Infrastructure", "LojaMargun-Infrastructure\LojaMargun-Infrastructure.csproj", "{FE3A8E4B-367B-4147-8531-02FF2A67B87E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaMargun-API", "LojaMargun-API\LojaMargun-API.csproj", "{DFA0D6D6-7C6B-4F9A-8011-41C2008B4262}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E5596241-31E9-48C1-A27D-241D44D666BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E5596241-31E9-48C1-A27D-241D44D666BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E5596241-31E9-48C1-A27D-241D44D666BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E5596241-31E9-48C1-A27D-241D44D666BD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4A2645DE-3430-46FC-A779-EA8E05C8C78E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4A2645DE-3430-46FC-A779-EA8E05C8C78E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A2645DE-3430-46FC-A779-EA8E05C8C78E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{FE3A8E4B-367B-4147-8531-02FF2A67B87E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE3A8E4B-367B-4147-8531-02FF2A67B87E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE3A8E4B-367B-4147-8531-02FF2A67B87E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFA0D6D6-7C6B-4F9A-8011-41C2008B4262}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFA0D6D6-7C6B-4F9A-8011-41C2008B4262}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFA0D6D6-7C6B-4F9A-8011-41C2008B4262}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFA0D6D6-7C6B-4F9A-8011-41C2008B4262}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

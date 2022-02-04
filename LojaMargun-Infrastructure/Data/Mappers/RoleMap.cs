@@ -9,6 +9,7 @@ namespace LojaMargun_Infrastructure.Data.Mappers
         public void Configure(EntityTypeBuilder<Role> builder)
         {
             builder.Property(value => value.Name).IsRequired();
+            builder.Property(value => value.Description).IsRequired();
             builder.ToTable("Role");
         }
     }

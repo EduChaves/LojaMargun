@@ -1,4 +1,6 @@
 E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\bin\Debug\net5.0\LojaMargun-Infrastructure.deps.json
+E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\bin\Debug\net5.0\LojaMargun-Infrastructure.runtimeconfig.json
+E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\bin\Debug\net5.0\LojaMargun-Infrastructure.runtimeconfig.dev.json
 E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\bin\Debug\net5.0\LojaMargun-Infrastructure.dll
 E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\bin\Debug\net5.0\ref\LojaMargun-Infrastructure.dll
 E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\bin\Debug\net5.0\LojaMargun-Infrastructure.pdb
@@ -12,6 +14,5 @@ E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaM
 E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.dll
 E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\ref\LojaMargun-Infrastructure.dll
 E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.pdb
-E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\bin\Debug\net5.0\LojaMargun-Infrastructure.runtimeconfig.json
-E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\bin\Debug\net5.0\LojaMargun-Infrastructure.runtimeconfig.dev.json
 E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.genruntimeconfig.cache
+E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.csproj.CopyComplete

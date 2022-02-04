@@ -6,9 +6,12 @@ namespace LojaMargun_Domain.Entities
     {
         public int BagId { get; set; }
         public Bag Bag { get; set; }
-        public int ClientId { get; set; }
-        public Client Client { get; set; }
         public DateTime BuyDate { get; set; }
-        public double Value { get; set; }
+        public string Cep { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string AddressEndNumber { get; set; }
+        public string Complement { get; set; }
+        public double TotalValue { get; set; }
     }
 }

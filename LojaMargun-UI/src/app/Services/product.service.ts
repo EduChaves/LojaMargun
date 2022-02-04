@@ -36,4 +36,9 @@ export class ProductService {
     const url = `${this.url}/${productId}`
     return this.http.get<Product>(url);
   }
+
+  SaveImage(data: any) : Observable<any> {
+    const url = `${this.url}/SaveImage`;
+    return this.http.post<any>(url, data, httpOption);
+  }
 }
