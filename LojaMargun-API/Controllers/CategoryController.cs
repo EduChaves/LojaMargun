@@ -13,15 +13,9 @@ namespace LojaMargun_API.Controllers
     {
         private readonly ICategoryService _categoryService;
 
-        public CategoryController(ICategoryService categoryService)
-        {
-            _categoryService = categoryService;
-        }
+        public CategoryController(ICategoryService categoryService) => _categoryService = categoryService;
 
         [HttpGet]
-        public async Task<IEnumerable<CategoryDTO>> GetAll() => await _categoryService.GetAll();
-
-        [HttpGet("GET")]
-        public string Get() => "OI";
-    }
+        public async Task<IEnumerable<CategoryDTO>> GetAllCategories() => await _categoryService.GetAll();
+     }
 }

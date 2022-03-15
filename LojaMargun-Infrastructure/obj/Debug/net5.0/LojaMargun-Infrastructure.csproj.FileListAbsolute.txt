@@ -11,8 +11,8 @@ E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaM
 E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.AssemblyInfoInputs.cache
 E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.AssemblyInfo.cs
 E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.csproj.CoreCompileInputs.cache
+E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.csproj.CopyComplete
 E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.dll
 E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\ref\LojaMargun-Infrastructure.dll
 E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.pdb
 E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.genruntimeconfig.cache
-E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.csproj.CopyComplete
