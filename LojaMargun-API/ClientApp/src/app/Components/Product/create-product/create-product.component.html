@@ -1,5 +1,110 @@
-<div>
-    <h2>Cadastro de Produtos</h2>
-    <br>
-    <mat-divider></mat-divider>
+<div fxLayout="row" fxLayoutAlign="center end">
+    <div>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Cadastro de Produto</mat-card-title>
+            </mat-card-header>
+    
+            <mat-divider></mat-divider>
+
+            <form [formGroup]="form" (ngSubmit)="SubmitForm()">
+                <mat-card-content>
+                    <div fxLayout="row" fxLayoutGap="30px">
+                        <div fxFlex="40" fxLayoutAlign="center end">
+                            <div fxLayout="column">
+                                <div>
+                                    <img src="#" hidden id="img" width="350" height="300"/>
+                                </div>
+                                <div fxLayoutAlign="center end">
+                                    <input type="file" hidden #fileInput name="img" formControlName="image" (change)="SelectImage($event)">
+                                    
+                                    <br><br><br><br>
+        
+                                    <button type="button" mat-stroked-button color="primary" (click)="fileInput.click()">
+                                        Escolha uma Imagem
+                                    </button>
+        
+                                    <div *ngIf="Controls.image.invalid && Controls.image.touched">
+                                        <sup>*</sup> Selecione uma Imagem
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div fxFlex="60">
+                            <div>
+                                <mat-form-field>
+                                    <mat-label>Produto</mat-label>
+                                    <input type="text" matInput formControlName="name" placeholder="Nome do Produto" required minlength="3" maxlength="50">
+                                    <mat-error *ngIf="Controls.name.invalid && Controls.name.touched">
+                                        <sup>*</sup> Campo Inválido
+                                    </mat-error>
+                                    <mat-error *ngIf="Controls.name.invalid && Controls.name.errors?.minlength">
+                                        <sup>*</sup> Digite mais caracteres
+                                    </mat-error>
+                                    <mat-error *ngIf="Controls.name.invalid && Controls.name.errors?.maxlength">
+                                        <sup>*</sup> Digite menos caracteres
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+            
+                            <div>
+                                <mat-form-field>
+                                    <mat-label>Tamanho</mat-label>
+                                    <input type="text" matInput formControlName="length" placeholder="Tamanho do Produto" required minlength="1" maxlength="15">
+                                    <mat-error *ngIf="Controls.length.invalid && Controls.length.touched">
+                                        <sup>*</sup> Campo Inválido
+                                    </mat-error>
+                                    <mat-error *ngIf="Controls.length.invalid && Controls.length.errors?.minlength">
+                                        <sup>*</sup> Digite mais caracteres
+                                    </mat-error>
+                                    <mat-error *ngIf="Controls.length.invalid && Controls.length.errors?.maxlength">
+                                        <sup>*</sup> Digite menos caracteres
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+            
+                            <div>
+                                <mat-form-field>
+                                    <mat-label>Valor</mat-label>
+                                    <input type="text" matInput formControlName="value" placeholder="Tamanho do Produto" required minlength="1" maxlength="15">
+                                    <mat-error *ngIf="Controls.value.invalid && Controls.value.touched">
+                                        <sup>*</sup> Campo Inválido
+                                    </mat-error>
+                                    <mat-error *ngIf="Controls.value.invalid && Controls.value.errors?.minlength">
+                                        <sup>*</sup> Digite mais caracteres
+                                    </mat-error>
+                                    <mat-error *ngIf="Controls.value.invalid && Controls.value.errors?.maxlength">
+                                        <sup>*</sup> Digite menos caracteres
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+            
+                            <div>
+                                <mat-form-field>
+                                    <mat-label>Categoria</mat-label>
+                                    <mat-select formControlName="categoryId" required>
+                                        <mat-option *ngFor="let category of listCategories" [value]="category.id">{{ category.name }}</mat-option>
+                                    </mat-select>
+                                    <mat-error *ngIf="Controls.categoryId.invalid && Controls.categoryId.touched">
+                                        <sup>*</sup> Campo Inválido
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+
+                </mat-card-content>
+
+                <mat-divider></mat-divider>
+        
+                <mat-card-actions>
+                    <div>
+                        <button type="submit" mat-stroked-button color="primary" [disabled]="form.invalid">Salvar</button>
+                        <button type="button" mat-stroked-button >Voltar</button>
+                    </div>
+                </mat-card-actions>
+            </form> 
+        </mat-card>
+    </div>
 </div>

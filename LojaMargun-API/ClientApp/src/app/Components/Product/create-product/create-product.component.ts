@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Category } from 'src/app/Models/Category';
 import { CategoryService } from 'src/app/Services/category.service';
 import { ProductService } from 'src/app/Services/product.service';
@@ -29,8 +29,16 @@ export class CreateProductComponent implements OnInit {
       length: new FormControl(null, [Validators.required, Validators.maxLength(15)]),
       value: new FormControl(null, [Validators.required]),
       image: new FormControl(null, [Validators.required]),
-      category: new FormControl(null, [Validators.required])
+      categoryId: new FormControl(null, [Validators.required])
     });
+  }
+
+  get Controls(){
+    return this.form.controls;
+  }
+
+  SelectImage(image : any){
+
   }
 
   SubmitForm(){
