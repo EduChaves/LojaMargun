@@ -15,27 +15,7 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Arquivos Diversos",
       "ColorIndex": -1
-    },
-    "e5596241-31e9-48c1-a27d-241d44d666bd": {
-      "ProjectGuid": "e5596241-31e9-48c1-a27d-241d44d666bd",
-      "DisplayName": "LojaMargun-API",
-      "ColorIndex": 2
-    },
-    "4a2645de-3430-46fc-a779-ea8e05c8c78e": {
-      "ProjectGuid": "4a2645de-3430-46fc-a779-ea8e05c8c78e",
-      "DisplayName": "LojaMargun-Application",
-      "ColorIndex": 3
-    },
-    "dfa0d6d6-7c6b-4f9a-8011-41c2008b4262": {
-      "ProjectGuid": "dfa0d6d6-7c6b-4f9a-8011-41c2008b4262",
-      "DisplayName": "LojaMargun-API",
-      "ColorIndex": 4
-    },
-    "2bb7d132-6a7e-42d0-b237-90f9f47c7a79": {
-      "ProjectGuid": "2bb7d132-6a7e-42d0-b237-90f9f47c7a79",
-      "DisplayName": "LojaMargun-API",
-      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 6
+  "NextColorIndex": 2
 }
