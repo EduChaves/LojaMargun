@@ -1,0 +1,9 @@
+.Image{
+    border-width: 1px;
+    border-color: #bdc3c7;
+    height: 300px;
+    width: 350px;
+}
+.mat-form-field.mat-form-field{
+    width: 300px;
+}

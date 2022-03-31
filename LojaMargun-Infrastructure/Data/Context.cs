@@ -2,6 +2,7 @@
 using LojaMargun_Infrastructure.Data.Mappers;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace LojaMargun_Infrastructure.Data
 {
@@ -26,5 +27,8 @@ namespace LojaMargun_Infrastructure.Data
             builder.ApplyConfiguration(new RoleMap());
             builder.ApplyConfiguration(new UserMap());
         }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
+            optionsBuilder.LogTo(Console.WriteLine);
     }
 }

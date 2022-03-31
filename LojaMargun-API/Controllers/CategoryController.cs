@@ -1,6 +1,5 @@
 ﻿using LojaMargun_Domain.Core.Interfaces.Services;
 using LojaMargun_Domain.DTOs;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -17,5 +16,5 @@ namespace LojaMargun_API.Controllers
 
         [HttpGet]
         public async Task<IEnumerable<CategoryDTO>> GetAllCategories() => await _categoryService.GetAll();
-     }
+    }
 }

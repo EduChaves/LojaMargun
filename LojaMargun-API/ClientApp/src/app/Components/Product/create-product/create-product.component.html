@@ -1,4 +1,5 @@
-<div fxLayout="row" fxLayoutAlign="center end">
+<p>create-product works!</p>
+<div fxLayout="row" class="a">
     <div>
         <mat-card>
             <mat-card-header>
@@ -12,8 +13,8 @@
                     <div fxLayout="row" fxLayoutGap="30px">
                         <div fxFlex="40" fxLayoutAlign="center end">
                             <div fxLayout="column">
-                                <div>
-                                    <img src="#" hidden id="img" width="350" height="300"/>
+                                <div class="Image">
+                                    <img src="#" hidden id="image" width="350" height="300"/>
                                 </div>
                                 <div fxLayoutAlign="center end">
                                     <input type="file" hidden #fileInput name="img" formControlName="image" (change)="SelectImage($event)">
@@ -83,10 +84,10 @@
                             <div>
                                 <mat-form-field>
                                     <mat-label>Categoria</mat-label>
-                                    <mat-select formControlName="categoryId" required>
-                                        <mat-option *ngFor="let category of listCategories" [value]="category.id">{{ category.name }}</mat-option>
+                                    <mat-select formControlName="category" required>
+                                        <mat-option *ngFor="let category of categories" [value]="category">{{ category.name }}</mat-option>
                                     </mat-select>
-                                    <mat-error *ngIf="Controls.categoryId.invalid && Controls.categoryId.touched">
+                                    <mat-error *ngIf="Controls.category.invalid && Controls.category.touched">
                                         <sup>*</sup> Campo Inválido
                                     </mat-error>
                                 </mat-form-field>

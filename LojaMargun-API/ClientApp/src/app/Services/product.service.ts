@@ -3,39 +3,46 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from '../Models/Product';
 
-const option = {
+const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type' : 'application/json'
-  }) 
+    'Content-type': 'application/json'
+  })
 }
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class ProductService {
-  url: string = "api/Product";
+  url = "API/Product";
 
   constructor(private http: HttpClient) { }
 
-  AddProduct(product: Product): Observable<any> {
-    return this.http.post<any>(this.url, product, option);
+  AddProduct(data: Product): Observable<any>{
+    return this.http.post<any>(this.url, data, httpOptions);
   }
 
-  UpdateProduct(product: Product): Observable<any> {
-    return this.http.put<any>(this.url, product, option);
+  UpdateProduct(data: Product): Observable<any>{
+    return this.http.put<any>(this.url, data, httpOptions);
   }
 
-  RemoveProduct(productId: number): Observable<any> {
-    const url = `${this.url}/${productId}`;
-    return this.http.delete(url, option);
+  RemoveProduct(id: number): Observable<any>{
+    const url = `${this.url}/${id}`;
+    return this.http.delete<any>(this.url, httpOptions);
   }
 
-  GetById(id: number): Observable<Product> {
+  GetProduct(id: number): Observable<Product>{
     const url = `${this.url}/${id}`;
     return this.http.get<Product>(url);
   }
 
-  GetAllProducts(): Observable<Product[]> {
+  GetAllProducts(): Observable<Product[]>{
     return this.http.get<Product[]>(this.url);
+  }
+
+  SaveImage(data: FormData): Observable<any> | null{
+    const url = `${this.url}/SaveImage`;
+    //return this.http.post<any>(url, data, httpOptions);
+    return null;
   }
 }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace LojaMargun_Infrastructure.Migrations
 {
-    public partial class init : Migration
+    public partial class Config : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -217,7 +217,7 @@ namespace LojaMargun_Infrastructure.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
                     Length = table.Column<string>(type: "VARCHAR(15)", maxLength: 15, nullable: false),
-                    Image = table.Column<byte>(type: "tinyint", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Active = table.Column<int>(type: "INT", nullable: false),
                     Value = table.Column<decimal>(type: "NUMERIC(38,2)", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false),

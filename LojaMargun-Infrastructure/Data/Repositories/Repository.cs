@@ -18,6 +18,7 @@ namespace LojaMargun_Infrastructure.Data.Repositories
             try
             {
                 await _context.AddAsync(entity);
+                await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {

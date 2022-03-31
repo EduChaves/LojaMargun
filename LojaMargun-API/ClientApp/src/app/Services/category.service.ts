@@ -6,12 +6,13 @@ import { Category } from '../Models/Category';
 @Injectable({
   providedIn: 'root'
 })
+
 export class CategoryService {
-  url: string = "api/Category";
+  url = "API/Category";
 
   constructor(private http: HttpClient) { }
 
-  GetAlCategories(): Observable<Category[]> {
+  GetAll(): Observable<Category[]> {
     return this.http.get<Category[]>(this.url);
   }
 }
