@@ -8,8 +8,8 @@ namespace LojaMargun_Infrastructure.Data.Mappers
     {
         public void Configure(EntityTypeBuilder<Role> builder)
         {
-            builder.Property(value => value.Name).IsRequired();
-            builder.Property(value => value.Description).IsRequired();
+            builder.Property(value => value.Name).HasColumnType("VARCHAR(50)").IsRequired().HasMaxLength(50);
+            builder.Property(value => value.Description).HasColumnType("VARCHAR(100)").IsRequired().HasMaxLength(100);
             builder.ToTable("Role");
         }
     }

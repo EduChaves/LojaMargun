@@ -3,17 +3,37 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace LojaMargun_Infrastructure.Migrations
 {
-    public partial class Config : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Address",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Stret = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
+                    Number = table.Column<int>(type: "INT", nullable: false),
+                    District = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
+                    State = table.Column<string>(type: "VARCHAR(30)", maxLength: 30, nullable: false),
+                    Complement = table.Column<string>(type: "VARCHAR(30)", nullable: false),
+                    Cep = table.Column<int>(type: "INT", nullable: false),
+                    ClientId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Address", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Category",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false)
+                    Name = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
+                    Active = table.Column<bool>(type: "BIT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -21,12 +41,29 @@ namespace LojaMargun_Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Items",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
+                    Description = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
+                    Length = table.Column<string>(type: "VARCHAR(20)", maxLength: 20, nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Value = table.Column<decimal>(type: "NUMERIC(38,2)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Items", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Role",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: false),
+                    Description = table.Column<string>(type: "VARCHAR(100)", maxLength: 100, nullable: false),
+                    Name = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
                     NormalizedName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -40,9 +77,8 @@ namespace LojaMargun_Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Name = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
-                    Cpf = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Password = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
+                    RoleId = table.Column<int>(type: "int", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -176,8 +212,9 @@ namespace LojaMargun_Infrastructure.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
+                    Cpf = table.Column<string>(type: "VARCHAR(11)", maxLength: 11, nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    Active = table.Column<int>(type: "INT", nullable: false)
+                    Active = table.Column<bool>(type: "BIT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -196,6 +233,7 @@ namespace LojaMargun_Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    ProductId = table.Column<int>(type: "int", nullable: false),
                     ClientId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -215,13 +253,11 @@ namespace LojaMargun_Infrastructure.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
-                    Length = table.Column<string>(type: "VARCHAR(15)", maxLength: 15, nullable: false),
-                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Active = table.Column<int>(type: "INT", nullable: false),
-                    Value = table.Column<decimal>(type: "NUMERIC(38,2)", nullable: false),
+                    ItemId = table.Column<int>(type: "int", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
-                    BagId = table.Column<int>(type: "int", nullable: false)
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    Active = table.Column<bool>(type: "BIT", nullable: false),
+                    BagId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -231,11 +267,17 @@ namespace LojaMargun_Infrastructure.Migrations
                         column: x => x.BagId,
                         principalTable: "Bag",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Product_Category_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Category",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Product_Items_ItemId",
+                        column: x => x.ItemId,
+                        principalTable: "Items",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -247,23 +289,33 @@ namespace LojaMargun_Infrastructure.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     BagId = table.Column<int>(type: "int", nullable: false),
-                    BuyDate = table.Column<DateTime>(type: "DATETIME", nullable: false),
-                    Cep = table.Column<string>(type: "VARCHAR(8)", maxLength: 8, nullable: false),
-                    City = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
-                    State = table.Column<string>(type: "VARCHAR(2)", maxLength: 2, nullable: false),
-                    AddressEndNumber = table.Column<string>(type: "VARCHAR(150)", maxLength: 150, nullable: false),
-                    Complement = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: true),
+                    SaleDate = table.Column<DateTime>(type: "DATETIME", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    AddressId = table.Column<int>(type: "int", nullable: false),
+                    Payment = table.Column<string>(type: "VARCHAR(50)", nullable: false),
                     TotalValue = table.Column<decimal>(type: "NUMERIC(38,2)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Sale", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_Sale_Address_AddressId",
+                        column: x => x.AddressId,
+                        principalTable: "Address",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
                         name: "FK_Sale_Bag_BagId",
                         column: x => x.BagId,
                         principalTable: "Bag",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Sale_User_UserId",
+                        column: x => x.UserId,
+                        principalTable: "User",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -307,6 +359,11 @@ namespace LojaMargun_Infrastructure.Migrations
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Product_ItemId",
+                table: "Product",
+                column: "ItemId");
+
+            migrationBuilder.CreateIndex(
                 name: "RoleNameIndex",
                 table: "Role",
                 column: "NormalizedName",
@@ -314,9 +371,19 @@ namespace LojaMargun_Infrastructure.Migrations
                 filter: "[NormalizedName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Sale_AddressId",
+                table: "Sale",
+                column: "AddressId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Sale_BagId",
                 table: "Sale",
                 column: "BagId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Sale_UserId",
+                table: "Sale",
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "EmailIndex",
@@ -359,6 +426,12 @@ namespace LojaMargun_Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "Category");
+
+            migrationBuilder.DropTable(
+                name: "Items");
+
+            migrationBuilder.DropTable(
+                name: "Address");
 
             migrationBuilder.DropTable(
                 name: "Bag");

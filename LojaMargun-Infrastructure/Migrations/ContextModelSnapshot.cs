@@ -19,6 +19,46 @@ namespace LojaMargun_Infrastructure.Migrations
                 .HasAnnotation("ProductVersion", "5.0.15")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("LojaMargun_Domain.Entities.Address", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Cep")
+                        .HasColumnType("INT");
+
+                    b.Property<int>("ClientId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Complement")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(30)");
+
+                    b.Property<string>("District")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("VARCHAR(50)");
+
+                    b.Property<int>("Number")
+                        .HasColumnType("INT");
+
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("VARCHAR(30)");
+
+                    b.Property<string>("Stret")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("VARCHAR(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Address");
+                });
+
             modelBuilder.Entity("LojaMargun_Domain.Entities.Bag", b =>
                 {
                     b.Property<int>("Id")
@@ -27,6 +67,9 @@ namespace LojaMargun_Infrastructure.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("ClientId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -42,6 +85,9 @@ namespace LojaMargun_Infrastructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("BIT");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -60,8 +106,13 @@ namespace LojaMargun_Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Active")
-                        .HasColumnType("INT");
+                    b.Property<bool>("Active")
+                        .HasColumnType("BIT");
+
+                    b.Property<string>("Cpf")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("VARCHAR(11)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -78,29 +129,26 @@ namespace LojaMargun_Infrastructure.Migrations
                     b.ToTable("Client");
                 });
 
-            modelBuilder.Entity("LojaMargun_Domain.Entities.Product", b =>
+            modelBuilder.Entity("LojaMargun_Domain.Entities.Item", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Active")
-                        .HasColumnType("INT");
-
-                    b.Property<int>("BagId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("VARCHAR(50)");
 
                     b.Property<string>("Image")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Length")
                         .IsRequired()
-                        .HasMaxLength(15)
-                        .HasColumnType("VARCHAR(15)");
+                        .HasMaxLength(20)
+                        .HasColumnType("VARCHAR(20)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -112,9 +160,38 @@ namespace LojaMargun_Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.ToTable("Items");
+                });
+
+            modelBuilder.Entity("LojaMargun_Domain.Entities.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("BIT");
+
+                    b.Property<int?>("BagId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ItemId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
                     b.HasIndex("BagId");
 
                     b.HasIndex("CategoryId");
+
+                    b.HasIndex("ItemId");
 
                     b.ToTable("Product");
                 });
@@ -130,12 +207,13 @@ namespace LojaMargun_Infrastructure.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("VARCHAR(100)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(256)
-                        .HasColumnType("nvarchar(256)");
+                        .HasMaxLength(50)
+                        .HasColumnType("VARCHAR(50)");
 
                     b.Property<string>("NormalizedName")
                         .HasMaxLength(256)
@@ -158,42 +236,32 @@ namespace LojaMargun_Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AddressEndNumber")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("VARCHAR(150)");
+                    b.Property<int>("AddressId")
+                        .HasColumnType("int");
 
                     b.Property<int>("BagId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("BuyDate")
+                    b.Property<string>("Payment")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(50)");
+
+                    b.Property<DateTime>("SaleDate")
                         .HasColumnType("DATETIME");
-
-                    b.Property<string>("Cep")
-                        .IsRequired()
-                        .HasMaxLength(8)
-                        .HasColumnType("VARCHAR(8)");
-
-                    b.Property<string>("City")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("VARCHAR(50)");
-
-                    b.Property<string>("Complement")
-                        .HasMaxLength(50)
-                        .HasColumnType("VARCHAR(50)");
-
-                    b.Property<string>("State")
-                        .IsRequired()
-                        .HasMaxLength(2)
-                        .HasColumnType("VARCHAR(2)");
 
                     b.Property<decimal>("TotalValue")
                         .HasColumnType("NUMERIC(38,2)");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
 
+                    b.HasIndex("AddressId");
+
                     b.HasIndex("BagId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Sale");
                 });
@@ -211,9 +279,6 @@ namespace LojaMargun_Infrastructure.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Cpf")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -226,11 +291,6 @@ namespace LojaMargun_Infrastructure.Migrations
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("VARCHAR(50)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
@@ -253,6 +313,9 @@ namespace LojaMargun_Infrastructure.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
@@ -403,11 +466,9 @@ namespace LojaMargun_Infrastructure.Migrations
 
             modelBuilder.Entity("LojaMargun_Domain.Entities.Product", b =>
                 {
-                    b.HasOne("LojaMargun_Domain.Entities.Bag", "Bag")
+                    b.HasOne("LojaMargun_Domain.Entities.Bag", null)
                         .WithMany("Products")
-                        .HasForeignKey("BagId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BagId");
 
                     b.HasOne("LojaMargun_Domain.Entities.Category", "Category")
                         .WithMany("Products")
@@ -415,20 +476,40 @@ namespace LojaMargun_Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Bag");
+                    b.HasOne("LojaMargun_Domain.Entities.Item", "Item")
+                        .WithMany()
+                        .HasForeignKey("ItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Category");
+
+                    b.Navigation("Item");
                 });
 
             modelBuilder.Entity("LojaMargun_Domain.Entities.Sale", b =>
                 {
+                    b.HasOne("LojaMargun_Domain.Entities.Address", "Address")
+                        .WithMany()
+                        .HasForeignKey("AddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("LojaMargun_Domain.Entities.Bag", "Bag")
                         .WithMany()
                         .HasForeignKey("BagId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("LojaMargun_Domain.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Address");
+
                     b.Navigation("Bag");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

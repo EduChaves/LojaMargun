@@ -21,3 +21,4 @@ C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Domain\obj\Debug\net5.0\LojaM
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Domain\obj\Debug\net5.0\LojaMargun-Domain.dll
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Domain\obj\Debug\net5.0\ref\LojaMargun-Domain.dll
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Domain\obj\Debug\net5.0\LojaMargun-Domain.pdb
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Domain\obj\Debug\net5.0\LojaMargun-Domain.csproj.AssemblyReference.cache

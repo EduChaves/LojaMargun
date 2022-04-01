@@ -9,6 +9,8 @@ namespace LojaMargun_Infrastructure.Data
     public class Context : IdentityDbContext<User, Role, string>
     {
         public DbSet<Product> Products { get; set; }
+        public DbSet<Item> Items { get; set; }
+        public DbSet<Address> Address { get; set; }
         public DbSet<Client> Clients { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Bag> Bags { get; set; }
@@ -26,6 +28,8 @@ namespace LojaMargun_Infrastructure.Data
             builder.ApplyConfiguration(new SaleMap());
             builder.ApplyConfiguration(new RoleMap());
             builder.ApplyConfiguration(new UserMap());
+            builder.ApplyConfiguration(new AddressMap());
+            builder.ApplyConfiguration(new ItemMap());
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>

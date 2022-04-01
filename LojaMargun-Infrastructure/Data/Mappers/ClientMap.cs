@@ -9,7 +9,8 @@ namespace LojaMargun_Infrastructure.Data.Mappers
         public void Configure(EntityTypeBuilder<Client> builder)
         {
             builder.Property(value => value.Name).HasColumnType("VARCHAR(50)").IsRequired().HasMaxLength(50);
-            builder.Property(value => value.Active).HasColumnType("INT").IsRequired();
+            builder.Property(value => value.Cpf).HasColumnType("VARCHAR(11)").IsRequired().HasMaxLength((11));
+            builder.Property(value => value.Active).HasColumnType("BIT").IsRequired();
             builder.ToTable("Client");
         }
     }
