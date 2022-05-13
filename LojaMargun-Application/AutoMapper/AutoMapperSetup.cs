@@ -9,13 +9,11 @@ namespace LojaMargun_Application.AutoMapper
         public AutoMapperSetup()
         {
             #region DTOToEntity
-            CreateMap<ItemDTO, Item>();
             CreateMap<CategoryDTO, Category>();
             CreateMap<ProductDTO, Product>();
             #endregion
 
             #region EntityToDTO
-            CreateMap<Item, ItemDTO>();
             CreateMap<Category, CategoryDTO>();
             CreateMap<Product, ProductDTO>();
             #endregion

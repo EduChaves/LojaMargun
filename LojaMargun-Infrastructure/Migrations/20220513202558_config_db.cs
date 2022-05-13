@@ -36,23 +36,6 @@ namespace LojaMargun_Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Products",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
-                    Description = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
-                    Length = table.Column<string>(type: "VARCHAR(20)", maxLength: 20, nullable: false),
-                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Value = table.Column<decimal>(type: "NUMERIC(38,2)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Products", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Role",
                 columns: table => new
                 {
@@ -68,36 +51,33 @@ namespace LojaMargun_Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Item",
+                name: "Products",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ProductId = table.Column<int>(type: "int", nullable: false),
+                    Name = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
+                    Description = table.Column<string>(type: "VARCHAR(50)", maxLength: 50, nullable: false),
+                    Length = table.Column<string>(type: "VARCHAR(20)", maxLength: 20, nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Value = table.Column<decimal>(type: "NUMERIC(38,2)", nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
-                    Active = table.Column<bool>(type: "BIT", nullable: false),
                     BagId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Item", x => x.Id);
+                    table.PrimaryKey("PK_Products", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Item_Bag_BagId",
+                        name: "FK_Products_Bag_BagId",
                         column: x => x.BagId,
                         principalTable: "Bag",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Item_Category_CategoryId",
+                        name: "FK_Products_Category_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Category",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Item_Products_ProductId",
-                        column: x => x.ProductId,
-                        principalTable: "Products",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -359,19 +339,14 @@ namespace LojaMargun_Infrastructure.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Item_BagId",
-                table: "Item",
+                name: "IX_Products_BagId",
+                table: "Products",
                 column: "BagId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Item_CategoryId",
-                table: "Item",
+                name: "IX_Products_CategoryId",
+                table: "Products",
                 column: "CategoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Item_ProductId",
-                table: "Item",
-                column: "ProductId");
 
             migrationBuilder.CreateIndex(
                 name: "RoleNameIndex",
@@ -427,16 +402,13 @@ namespace LojaMargun_Infrastructure.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Item");
+                name: "Products");
 
             migrationBuilder.DropTable(
                 name: "Sale");
 
             migrationBuilder.DropTable(
                 name: "Category");
-
-            migrationBuilder.DropTable(
-                name: "Products");
 
             migrationBuilder.DropTable(
                 name: "Address");

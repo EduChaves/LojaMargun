@@ -6,6 +6,6 @@ namespace LojaMargun_Domain.DTOs
     {
         public int ProductId { get; set; }
         public double TotalValue { get; set; }
-        public virtual IEnumerable<ItemDTO> Products { get; set; }
+        public virtual IEnumerable<ProductDTO> Products { get; set; }
     }
 }

@@ -35,11 +35,10 @@ namespace LojaMargun_API
             services.AddControllers().AddNewtonsoftJson(value => value.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddScoped<ICategoryService, CategoryService>();
-            services.AddScoped<IItemService, ItemService>();
+            services.AddScoped<IProductService, ProductService>();
             //services.AddScoped<IProductService, ProductService>
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
-            services.AddScoped<IItemRepository, ItemRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
         }
 

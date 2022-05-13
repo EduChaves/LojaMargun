@@ -134,7 +134,7 @@ namespace LojaMargun_Infrastructure.Migrations
                     b.ToTable("Client");
                 });
 
-            modelBuilder.Entity("LojaMargun_Domain.Entities.Item", b =>
+            modelBuilder.Entity("LojaMargun_Domain.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -142,37 +142,13 @@ namespace LojaMargun_Infrastructure.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<bool>("Active")
-                        .HasColumnType("BIT");
+                        .HasColumnType("bit");
 
                     b.Property<int?>("BagId")
                         .HasColumnType("int");
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BagId");
-
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("Item");
-                });
-
-            modelBuilder.Entity("LojaMargun_Domain.Entities.Product", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -197,6 +173,10 @@ namespace LojaMargun_Infrastructure.Migrations
                         .HasColumnType("NUMERIC(38,2)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BagId");
+
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
                 });
@@ -475,7 +455,7 @@ namespace LojaMargun_Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("LojaMargun_Domain.Entities.Item", b =>
+            modelBuilder.Entity("LojaMargun_Domain.Entities.Product", b =>
                 {
                     b.HasOne("LojaMargun_Domain.Entities.Bag", null)
                         .WithMany("Products")
@@ -487,15 +467,7 @@ namespace LojaMargun_Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("LojaMargun_Domain.Entities.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Category");
-
-                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("LojaMargun_Domain.Entities.Sale", b =>

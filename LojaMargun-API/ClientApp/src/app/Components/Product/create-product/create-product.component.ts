@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Category } from 'src/app/Models/Category';
-import { Item } from 'src/app/Models/Item';
+import { Product } from 'src/app/Models/Product';
 import { CategoryService } from 'src/app/Services/category.service';
-import { ItemService } from 'src/app/Services/item.service';
+import { ProductService } from 'src/app/Services/product.service';
 
 @Component({
   selector: 'app-create-product',
@@ -20,7 +20,7 @@ export class CreateProductComponent implements OnInit {
 
   constructor(
     private categoryService: CategoryService,
-    private itemService: ItemService,
+    private productService: ProductService,
     private router: Router
     ) { }
 
@@ -70,19 +70,16 @@ export class CreateProductComponent implements OnInit {
     var formData = new FormData();
 
     formData.append("file", this.form.get("image").value);
-    // const product = new Product();
-    // product.name = form.name;
-    // product.description = form.description;
-    // product.length = form.length;
-    // product.value = form.value;
-    // product.image = this.image;
-
-    const data = new Item();
-    data.quantity = form.quantity;
+    const data = new Product();
+    data.name = form.name;
+    data.description = form.description;
+    data.length = form.length;
+    data.value = form.value;
+    data.image = this.image;
     data.categoryId = form.category.id;
-    data.product = form;
+    data.active = true;
 
-      this.itemService.AddProduct(data).subscribe(result => console.log(result))
+    this.productService.AddProduct(data).subscribe(result => console.log(result));
 
     // this.productService.SaveImage(formData).subscribe(result => {
     //   // const data = new Product();

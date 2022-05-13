@@ -9,22 +9,22 @@ namespace LojaMargun_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ItemController : ControllerBase
+    public class ProductController : ControllerBase
     {
-        private readonly IItemService _itemService;
+        private readonly IProductService _productService;
 
-        public ItemController(IItemService productService) => _itemService = productService;
+        public ProductController(IProductService productService) => _productService = productService;
 
         [HttpGet]
-        public async Task<IEnumerable<ItemDTO>> GetAllProduct() => await _itemService.GetAll();
+        public async Task<IEnumerable<ProductDTO>> GetAllProduct() => await _productService.GetAll();
 
         [HttpPost]
-        public async Task<ActionResult> AddProducts(ItemDTO itemDTO)
+        public async Task<ActionResult> AddProducts(ProductDTO productDTO)
         {
-            if (itemDTO == null)
+            if (productDTO == null)
                 return NotFound();
 
-            await _itemService.Add(itemDTO);
+            await _productService.Add(productDTO);
             
             return Ok("Produto cadastrado com sucesso!");
         }

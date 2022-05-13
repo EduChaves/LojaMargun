@@ -8,5 +8,6 @@
         public UserDTO User { get; set; }
         public int BagId { get; set; }
         public BagDTO Bag { get; set; }
+        public bool Active { get; set; }
     }
 }

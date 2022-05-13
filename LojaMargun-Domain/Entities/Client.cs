@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace LojaMargun_Domain.Entities
+﻿namespace LojaMargun_Domain.Entities
 {
     public class Client : EntityBase
     {

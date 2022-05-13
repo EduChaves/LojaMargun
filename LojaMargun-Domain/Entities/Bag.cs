@@ -7,6 +7,6 @@ namespace LojaMargun_Domain.Entities
         public int ProductId { get; set; }
         public double TotalVale { get; set; }
         public virtual Sale Sale { get; set; }
-        public virtual IEnumerable<Item> Products { get; set; }
+        public virtual IEnumerable<Product> Products { get; set; }
     }
 }

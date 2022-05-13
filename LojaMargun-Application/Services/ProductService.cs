@@ -9,43 +9,41 @@ using System.Threading.Tasks;
 
 namespace LojaMargun_Application.Services
 {
-    public class ItemService : IItemService
+    public class ProductService : IProductService
     {
-        private readonly IItemRepository _itemRepository;
         private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
 
-        public ItemService(IItemRepository itemRepository, IProductRepository productRepository, IMapper mapper)
+        public ProductService(IProductRepository productRepository, IMapper mapper)
         {
-            _itemRepository = itemRepository;
             _productRepository = productRepository;
             _mapper = mapper;
         }
 
-        public async Task Add(ItemDTO itemDTO)
+        public async Task Add(ProductDTO productDTO)
         {
-            var item = _mapper.Map<Item>(itemDTO);
+            var item = _mapper.Map<Product>(productDTO);
             //await _productRepository.Add(item.Product);
-            await _itemRepository.Add(item);
+            await _productRepository.Add(item);
         }
 
-        public async Task<IEnumerable<ItemDTO>> GetAll()
+        public async Task<IEnumerable<ProductDTO>> GetAll()
         {
-            var item = await _itemRepository.GetAll().ToListAsync();
-            return _mapper.Map<IEnumerable<ItemDTO>>(item);
+            var product = await _productRepository.GetAll().ToListAsync();
+            return _mapper.Map<IEnumerable<ProductDTO>>(product);
         }
 
-        public Task<ItemDTO> GetById(int id)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public Task Remove(ItemDTO itemtDTO)
+        public Task<ProductDTO> GetById(int id)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task Update(ItemDTO itemDTO)
+        public Task Remove(ProductDTO productDTO)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task Update(ProductDTO productDTO)
         {
             throw new System.NotImplementedException();
         }
