@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LojaMargun_Infrastructure.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220401183648_init")]
-    partial class init
+    [Migration("20220513033513_config_db")]
+    partial class config_db
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -58,6 +58,8 @@ namespace LojaMargun_Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ClientId");
+
                     b.ToTable("Address");
                 });
 
@@ -68,15 +70,13 @@ namespace LojaMargun_Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ClientId")
-                        .HasColumnType("int");
-
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.Property<double>("TotalVale")
+                        .HasColumnType("float");
 
-                    b.HasIndex("ClientId");
+                    b.HasKey("Id");
 
                     b.ToTable("Bag");
                 });
@@ -111,6 +111,9 @@ namespace LojaMargun_Infrastructure.Migrations
                     b.Property<bool>("Active")
                         .HasColumnType("BIT");
 
+                    b.Property<int>("BagId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Cpf")
                         .IsRequired()
                         .HasMaxLength(11)
@@ -126,12 +129,47 @@ namespace LojaMargun_Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("BagId");
+
                     b.HasIndex("UserId");
 
                     b.ToTable("Client");
                 });
 
             modelBuilder.Entity("LojaMargun_Domain.Entities.Item", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("BIT");
+
+                    b.Property<int?>("BagId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BagId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("Item");
+                });
+
+            modelBuilder.Entity("LojaMargun_Domain.Entities.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -162,40 +200,7 @@ namespace LojaMargun_Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Items");
-                });
-
-            modelBuilder.Entity("LojaMargun_Domain.Entities.Product", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool>("Active")
-                        .HasColumnType("BIT");
-
-                    b.Property<int?>("BagId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ItemId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("BagId");
-
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("ItemId");
-
-                    b.ToTable("Product");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("LojaMargun_Domain.Entities.Role", b =>
@@ -251,19 +256,12 @@ namespace LojaMargun_Infrastructure.Migrations
                     b.Property<DateTime>("SaleDate")
                         .HasColumnType("DATETIME");
 
-                    b.Property<decimal>("TotalValue")
-                        .HasColumnType("NUMERIC(38,2)");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("AddressId");
 
-                    b.HasIndex("BagId");
-
-                    b.HasIndex("UserId");
+                    b.HasIndex("BagId")
+                        .IsUnique();
 
                     b.ToTable("Sale");
                 });
@@ -319,6 +317,9 @@ namespace LojaMargun_Infrastructure.Migrations
                     b.Property<int>("RoleId")
                         .HasColumnType("int");
 
+                    b.Property<string>("RoleId1")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -338,6 +339,8 @@ namespace LojaMargun_Infrastructure.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.HasIndex("RoleId1");
 
                     b.ToTable("User");
                 });
@@ -446,7 +449,7 @@ namespace LojaMargun_Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("LojaMargun_Domain.Entities.Bag", b =>
+            modelBuilder.Entity("LojaMargun_Domain.Entities.Address", b =>
                 {
                     b.HasOne("LojaMargun_Domain.Entities.Client", "Client")
                         .WithMany()
@@ -459,34 +462,42 @@ namespace LojaMargun_Infrastructure.Migrations
 
             modelBuilder.Entity("LojaMargun_Domain.Entities.Client", b =>
                 {
+                    b.HasOne("LojaMargun_Domain.Entities.Bag", "Bag")
+                        .WithMany()
+                        .HasForeignKey("BagId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("LojaMargun_Domain.Entities.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
 
+                    b.Navigation("Bag");
+
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("LojaMargun_Domain.Entities.Product", b =>
+            modelBuilder.Entity("LojaMargun_Domain.Entities.Item", b =>
                 {
                     b.HasOne("LojaMargun_Domain.Entities.Bag", null)
                         .WithMany("Products")
                         .HasForeignKey("BagId");
 
                     b.HasOne("LojaMargun_Domain.Entities.Category", "Category")
-                        .WithMany("Products")
+                        .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("LojaMargun_Domain.Entities.Item", "Item")
+                    b.HasOne("LojaMargun_Domain.Entities.Product", "Product")
                         .WithMany()
-                        .HasForeignKey("ItemId")
+                        .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Category");
 
-                    b.Navigation("Item");
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("LojaMargun_Domain.Entities.Sale", b =>
@@ -498,20 +509,23 @@ namespace LojaMargun_Infrastructure.Migrations
                         .IsRequired();
 
                     b.HasOne("LojaMargun_Domain.Entities.Bag", "Bag")
-                        .WithMany()
-                        .HasForeignKey("BagId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .WithOne("Sale")
+                        .HasForeignKey("LojaMargun_Domain.Entities.Sale", "BagId")
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
-
-                    b.HasOne("LojaMargun_Domain.Entities.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
 
                     b.Navigation("Address");
 
                     b.Navigation("Bag");
+                });
 
-                    b.Navigation("User");
+            modelBuilder.Entity("LojaMargun_Domain.Entities.User", b =>
+                {
+                    b.HasOne("LojaMargun_Domain.Entities.Role", "Role")
+                        .WithMany()
+                        .HasForeignKey("RoleId1");
+
+                    b.Navigation("Role");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -568,11 +582,8 @@ namespace LojaMargun_Infrastructure.Migrations
             modelBuilder.Entity("LojaMargun_Domain.Entities.Bag", b =>
                 {
                     b.Navigation("Products");
-                });
 
-            modelBuilder.Entity("LojaMargun_Domain.Entities.Category", b =>
-                {
-                    b.Navigation("Products");
+                    b.Navigation("Sale");
                 });
 #pragma warning restore 612, 618
         }

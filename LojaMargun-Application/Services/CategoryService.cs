@@ -2,6 +2,7 @@
 using LojaMargun_Domain.Core.Interfaces.Repositories;
 using LojaMargun_Domain.Core.Interfaces.Services;
 using LojaMargun_Domain.DTOs;
+using LojaMargun_Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -18,9 +19,10 @@ namespace LojaMargun_Application.Services
             _categoryRepository = categoryRepository;
             _mapper = mapper;
         }
-        public Task Add(CategoryDTO categoryDTO)
+        public async Task Add(CategoryDTO categoryDTO)
         {
-            throw new System.NotImplementedException();
+            var value = _mapper.Map<Category>(categoryDTO);
+            await _categoryRepository.Add(value);
         }
 
         public async Task<IEnumerable<CategoryDTO>> GetAll()

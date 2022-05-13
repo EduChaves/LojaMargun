@@ -2,10 +2,12 @@
 {
     public class Item : EntityBase
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string Length { get; set; }
-        public string Image { get; set; }
-        public double Value { get; set; }
+        public int ProductId { get; set; }
+        public Product Product { get; set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
+        public int Quantity { get; set; }
+        public bool Active { get; set; }
     }
+
 }

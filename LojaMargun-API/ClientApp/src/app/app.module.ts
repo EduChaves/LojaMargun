@@ -16,11 +16,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDividerModule } from '@angular/material/divider';
+import { CreateCategoryComponent } from './Components/Category/create-category/create-category.component';
+import { ListProductComponent } from './Components/Product/list-product/list-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateProductComponent
+    CreateProductComponent,
+    CreateCategoryComponent,
+    ListProductComponent
   ],
   imports: [
     BrowserModule,

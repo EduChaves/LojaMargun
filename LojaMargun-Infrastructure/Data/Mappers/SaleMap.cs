@@ -10,7 +10,7 @@ namespace LojaMargun_Infrastructure.Data.Mappers
         {
             builder.Property(value => value.SaleDate).HasColumnType("DATETIME").IsRequired();
             builder.Property(value => value.Payment).HasColumnType("VARCHAR(50)").IsRequired();
-            builder.Property(value => value.TotalValue).HasColumnType("NUMERIC(38,2)").IsRequired();
+            builder.HasOne(value => value.Bag).WithOne(value => value.Sale).OnDelete(DeleteBehavior.NoAction);
             builder.ToTable("Sale");
         }
     }

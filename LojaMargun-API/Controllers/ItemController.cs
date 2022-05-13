@@ -1,7 +1,7 @@
 ﻿using LojaMargun_Domain.Core.Interfaces.Services;
 using LojaMargun_Domain.DTOs;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -9,19 +9,22 @@ namespace LojaMargun_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController : ControllerBase
+    public class ItemController : ControllerBase
     {
-        private readonly IProductService _productService;
+        private readonly IItemService _itemService;
 
-        public ProductController(IProductService productService) => _productService = productService;
+        public ItemController(IItemService productService) => _itemService = productService;
+
+        [HttpGet]
+        public async Task<IEnumerable<ItemDTO>> GetAllProduct() => await _itemService.GetAll();
 
         [HttpPost]
-        public async Task<ActionResult> AddProducts(ProductDTO productDTO)
+        public async Task<ActionResult> AddProducts(ItemDTO itemDTO)
         {
-            if (productDTO == null)
+            if (itemDTO == null)
                 return NotFound();
 
-            await _productService.Add(productDTO);
+            await _itemService.Add(itemDTO);
             
             return Ok("Produto cadastrado com sucesso!");
         }

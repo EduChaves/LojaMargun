@@ -2,10 +2,10 @@
 
 namespace LojaMargun_Domain.DTOs
 {
-    public class BagDTO
+    public class BagDTO : DTOBase
     {
-        public int ClientId { get; set; }
-        public ClientDTO Client { get; set; }
-        public virtual IEnumerable<ProductDTO> Products { get; set; }
+        public int ProductId { get; set; }
+        public double TotalValue { get; set; }
+        public virtual IEnumerable<ItemDTO> Products { get; set; }
     }
 }

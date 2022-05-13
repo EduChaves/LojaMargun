@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Product } from '../Models/Product';
+import { Item } from '../Models/Item';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -13,16 +13,16 @@ const httpOptions = {
   providedIn: 'root'
 })
 
-export class ProductService {
-  url = "API/Product";
+export class ItemService {
+  url = "API/Item";
 
   constructor(private http: HttpClient) { }
 
-  AddProduct(data: Product): Observable<any>{
+  AddProduct(data: Item): Observable<any>{
     return this.http.post<any>(this.url, data, httpOptions);
   }
 
-  UpdateProduct(data: Product): Observable<any>{
+  UpdateProduct(data: Item): Observable<any>{
     return this.http.put<any>(this.url, data, httpOptions);
   }
 
@@ -31,13 +31,13 @@ export class ProductService {
     return this.http.delete<any>(this.url, httpOptions);
   }
 
-  GetProduct(id: number): Observable<Product>{
+  GetProduct(id: number): Observable<Item>{
     const url = `${this.url}/${id}`;
-    return this.http.get<Product>(url);
+    return this.http.get<Item>(url);
   }
 
-  GetAllProducts(): Observable<Product[]>{
-    return this.http.get<Product[]>(this.url);
+  GetAllProducts(): Observable<Item[]>{
+    return this.http.get<Item[]>(this.url);
   }
 
   SaveImage(data: FormData): Observable<any> | null{

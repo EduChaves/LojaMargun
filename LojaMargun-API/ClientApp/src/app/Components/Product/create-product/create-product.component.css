@@ -3,7 +3,16 @@
     border-color: #bdc3c7;
     height: 300px;
     width: 350px;
+    padding-right: 50px;
 }
 .mat-form-field.mat-form-field{
-    width: 300px;
+    width: 400px;
+}
+.mat-input-element{
+    margin-left: 50;
+}
+.ButtonsMov{
+    width: 160px;
+    display: block;
+    margin-left: auto;
 }

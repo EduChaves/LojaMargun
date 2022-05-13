@@ -11,9 +11,9 @@ namespace LojaMargun_Infrastructure.Data.Repositories
 
         public Repository(Context context) => _context = context;
 
-        public IQueryable<TEntity> GetAll() => _context.Set<TEntity>();
+        public virtual IQueryable<TEntity> GetAll() => _context.Set<TEntity>();
 
-        public async Task Add(TEntity entity)
+        public virtual async Task Add(TEntity entity)
         {
             try
             {

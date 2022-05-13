@@ -9,5 +9,6 @@
         public string Complement { get; set; }
         public int Cep { get; set; }
         public int ClientId { get; set; }
+        public Client Client { get; set; }
     }
 }

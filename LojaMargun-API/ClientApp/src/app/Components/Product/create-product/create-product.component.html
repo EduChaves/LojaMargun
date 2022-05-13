@@ -1,4 +1,3 @@
-<p>create-product works!</p>
 <div fxLayout="row" class="a">
     <div>
         <mat-card>
@@ -32,7 +31,7 @@
                             </div>
                         </div>
         
-                        <div fxFlex="60">
+                        <div fxFlex="60" class="Card">
                             <div>
                                 <mat-form-field>
                                     <mat-label>Produto</mat-label>
@@ -44,6 +43,22 @@
                                         <sup>*</sup> Digite mais caracteres
                                     </mat-error>
                                     <mat-error *ngIf="Controls.name.invalid && Controls.name.errors?.maxlength">
+                                        <sup>*</sup> Digite menos caracteres
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <div>
+                                <mat-form-field>
+                                    <mat-label>Descrição</mat-label>
+                                    <input type="text" matInput formControlName="description" placeholder="Descrição do Produto" required minlength="3" maxlength="50">
+                                    <mat-error *ngIf="Controls.description.invalid && Controls.description.touched">
+                                        <sup>*</sup> Campo Inválido
+                                    </mat-error>
+                                    <mat-error *ngIf="Controls.description.invalid && Controls.description.errors?.minlength">
+                                        <sup>*</sup> Digite mais caracteres
+                                    </mat-error>
+                                    <mat-error *ngIf="Controls.description.invalid && Controls.description.errors?.maxlength">
                                         <sup>*</sup> Digite menos caracteres
                                     </mat-error>
                                 </mat-form-field>
@@ -60,6 +75,22 @@
                                         <sup>*</sup> Digite mais caracteres
                                     </mat-error>
                                     <mat-error *ngIf="Controls.length.invalid && Controls.length.errors?.maxlength">
+                                        <sup>*</sup> Digite menos caracteres
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+
+                            <div>
+                                <mat-form-field>
+                                    <mat-label>Quantidade</mat-label>
+                                    <input type="text" matInput formControlName="quantity" placeholder="Quantidade de Produtos" required>
+                                    <mat-error *ngIf="Controls.quantity.invalid && Controls.quantity.touched">
+                                        <sup>*</sup> Campo Inválido
+                                    </mat-error>
+                                    <mat-error *ngIf="Controls.quantity.invalid && Controls.quantity.errors?.minlength">
+                                        <sup>*</sup> Digite mais caracteres
+                                    </mat-error>
+                                    <mat-error *ngIf="Controls.quantity.invalid && Controls.quantity.errors?.maxlength">
                                         <sup>*</sup> Digite menos caracteres
                                     </mat-error>
                                 </mat-form-field>
@@ -100,7 +131,7 @@
                 <mat-divider></mat-divider>
         
                 <mat-card-actions>
-                    <div>
+                    <div class="ButtonsMov">
                         <button type="submit" mat-stroked-button color="primary" [disabled]="form.invalid">Salvar</button>
                         <button type="button" mat-stroked-button >Voltar</button>
                     </div>

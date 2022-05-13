@@ -16,5 +16,16 @@ namespace LojaMargun_API.Controllers
 
         [HttpGet]
         public async Task<IEnumerable<CategoryDTO>> GetAllCategories() => await _categoryService.GetAll();
+        
+        [HttpPost]
+        public async Task<IActionResult> AddCategory(CategoryDTO categoryDTO)
+        {
+            if(categoryDTO == null)
+                return BadRequest();
+
+            await _categoryService.Add(categoryDTO);
+            
+            return Ok("Deu certo!");
+        }
     }
 }
