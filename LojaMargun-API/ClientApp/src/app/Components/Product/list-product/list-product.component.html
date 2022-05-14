@@ -1,17 +1,25 @@
-<p>list-product works!</p>
 <div>
-    <div>
-        <mat-card>
-            <mat-card-header>
-                <mat-card-title>Nome Produto</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-                <p>Imagem</p>
-                <p>valor</p>
-            </mat-card-content>
-            <mat-card-footer>
-                <p>Descrição</p>
-            </mat-card-footer>
-        </mat-card>
+    <h1>Produtos</h1>
+    <div class="divMaster">
+        
+        <br>
+        <mat-divider></mat-divider>
+        <div class="EditRows" *ngFor="let product of products">
+            <mat-card class="Order" >
+                <mat-card-header>
+                    <mat-card-title>{{product.name}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="Image">
+                        <img [src]="product.image" id="image" width="100" height="100"/>
+                    </div>
+                    <p>R${{product.value.toFixed(2)}}</p>
+                </mat-card-content>
+                <mat-card-footer class="teste">
+                    <p>{{product.description}}</p>
+                    <button type="button" mat-stroked-button color="primary">Detalhes</button>
+                </mat-card-footer>
+            </mat-card>
+        </div>
     </div>
 </div>

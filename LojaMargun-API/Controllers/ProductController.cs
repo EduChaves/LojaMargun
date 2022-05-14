@@ -29,19 +29,19 @@ namespace LojaMargun_API.Controllers
             return Ok("Produto cadastrado com sucesso!");
         }
 
-        [HttpPost("SaveImage")]
-        public async Task<ActionResult> SaveImage()
-        {
-            var image = Request.Form.Files[0];
-            byte[] data;
+        //[HttpPost("SaveImage")]
+        //public async Task<ActionResult> SaveImage()
+        //{
+        //    var image = Request.Form.Files[0];
+        //    byte[] data;
             
-            using(var read = image.OpenReadStream())
-                using(var memory = new MemoryStream())
-            {
-                await read.CopyToAsync(memory);
-                data = memory.ToArray();
-            }
-            return Ok(new { Image = data});
-        }
+        //    using(var read = image.OpenReadStream())
+        //        using(var memory = new MemoryStream())
+        //    {
+        //        await read.CopyToAsync(memory);
+        //        data = memory.ToArray();
+        //    }
+        //    return Ok(new { Image = data});
+        //}
     }
 }
