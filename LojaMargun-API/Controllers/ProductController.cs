@@ -19,14 +19,14 @@ namespace LojaMargun_API.Controllers
         public async Task<IEnumerable<ProductDTO>> GetAllProduct() => await _productService.GetAll();
 
         [HttpPost]
-        public async Task<ActionResult> AddProducts(ProductDTO productDTO)
+        public async Task<IActionResult> AddProducts(ProductDTO productDTO)
         {
             if (productDTO == null)
                 return NotFound();
 
             await _productService.Add(productDTO);
             
-            return Ok("Produto cadastrado com sucesso!");
+            return Ok();
         }
 
         //[HttpPost("SaveImage")]

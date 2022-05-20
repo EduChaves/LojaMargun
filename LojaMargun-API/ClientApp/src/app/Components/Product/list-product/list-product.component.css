@@ -1,13 +1,27 @@
 .Order{
     margin: 10% 3%;
-    width: 30%;
+    width: 100%;
 }
 .EditRows{
     display: flex;
+
 }
 .divMaster{
     display: flex;
 }
 .teste{
-    margin: 5;
+    margin-left: 1%;
+}
+.moveButton{
+    /* position: absolute; */
+    /* top: 85%; */
+    left: 60%;
+}
+.fieldlength{
+    width: 400px;
+    margin-left: 2%;
+}
+.cardLength{
+    width: 200px;
+    margin-left: 10%;
 }

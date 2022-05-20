@@ -1,23 +1,28 @@
 <div>
     <h1>Produtos</h1>
+    <mat-form-field class="fieldlength">
+        <mat-label>Pesquisar</mat-label>
+        <input type="text" matInput [formControl]="findProduct" placeholder="Pesquisar Produto">
+        <mat-autocomplete #auto="matAutocomplete"></mat-autocomplete>
+        <mat-option *ngFor="let option of filterOption | async">{{option.name}}</mat-option>
+    </mat-form-field>
+
     <div class="divMaster">
-        
         <br>
         <mat-divider></mat-divider>
         <div class="EditRows" *ngFor="let product of products">
-            <mat-card class="Order" >
+            <mat-card class="cardLength">
+                <img [src]="product.image" mat-card-image id="image" width="200" height="200"/>
                 <mat-card-header>
                     <mat-card-title>{{product.name}}</mat-card-title>
                 </mat-card-header>
-                <mat-card-content>
-                    <div class="Image">
-                        <img [src]="product.image" id="image" width="100" height="100"/>
-                    </div>
+                <mat-card-content>  
+                    
+                    <p>{{product.description}}</p>
                     <p>R${{product.value.toFixed(2)}}</p>
                 </mat-card-content>
-                <mat-card-footer class="teste">
-                    <p>{{product.description}}</p>
-                    <button type="button" mat-stroked-button color="primary">Detalhes</button>
+                <mat-card-footer class="teste1">
+                    <button class="moveButton" type="button" mat-button color="primary">Detalhes</button>
                 </mat-card-footer>
             </mat-card>
         </div>

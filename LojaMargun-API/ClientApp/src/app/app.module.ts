@@ -16,6 +16,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { CreateCategoryComponent } from './Components/Category/create-category/create-category.component';
 import { ListProductComponent } from './Components/Product/list-product/list-product.component';
 
@@ -39,7 +41,9 @@ import { ListProductComponent } from './Components/Product/list-product/list-pro
     MatButtonModule,
     MatInputModule,
     MatSelectModule,
-    MatDividerModule
+    MatDividerModule,
+    MatSnackBarModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Category } from 'src/app/Models/Category';
 import { Product } from 'src/app/Models/Product';
@@ -21,6 +22,7 @@ export class CreateProductComponent implements OnInit {
   constructor(
     private categoryService: CategoryService,
     private productService: ProductService,
+    private snackBar: MatSnackBar,
     private router: Router
     ) { }
 
@@ -42,17 +44,6 @@ export class CreateProductComponent implements OnInit {
     return this.form.controls;
   }
 
-  // SelectImage(image: any) {
-  //   debugger
-  //   this.form.get('image').setValue(image.target.files[0]);
-  //   const reader = new FileReader();
-  //   reader.onload = ((value: any) => {
-  //     document.getElementById("image")?.removeAttribute("hidden");
-  //     document.getElementById("image")?.setAttribute("src", value.target?.result)
-  //   });
-  //   reader.readAsDataURL(this.image);
-  // }
-
   SelectImage(image: any) {
     const reader = new FileReader();
     reader.onload = ((value: any) => {
@@ -65,11 +56,11 @@ export class CreateProductComponent implements OnInit {
   }
 
   SubmitForm(){
-    debugger
     const form = this.form.value;
     var formData = new FormData();
 
     formData.append("file", this.form.get("image").value);
+    
     const data = new Product();
     data.name = form.name;
     data.description = form.description;
@@ -79,16 +70,13 @@ export class CreateProductComponent implements OnInit {
     data.categoryId = form.category.id;
     data.active = true;
 
-    this.productService.AddProduct(data).subscribe(result => console.log(result));
-
-    // this.productService.SaveImage(formData).subscribe(result => {
-    //   // const data = new Product();
-    //   // data.name = form.name;
-    //   // data.category = form.categoryId;
-    //   // data.value = form.value;
-    //   // data.image = this.image;
-
-    //   // this.productService.AddProduct(data).subscribe(result => console.log(result))
-    // });
+    this.productService.AddProduct(data).subscribe(result => {
+      this.router.navigate(['product/listproduct']);
+      this.snackBar.open("Produto cadastrado com sucesso", "", {
+        duration: 3000,
+        horizontalPosition:"end",
+        verticalPosition:"top"
+      })
+    });
   }
 }
