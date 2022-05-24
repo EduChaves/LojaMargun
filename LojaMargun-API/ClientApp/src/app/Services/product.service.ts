@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { LocationResponse } from '../Models/LocationResponse';
 import { Product } from '../Models/Product';
 
 const httpOptions = {
@@ -40,9 +41,8 @@ export class ProductService {
     return this.http.get<Product[]>(this.url);
   }
 
-  SaveImage(data: FormData): Observable<any> | null{
-    const url = `${this.url}/SaveImage`;
-    //return this.http.post<any>(url, data, httpOptions);
-    return null;
+  GetLocation(value: string): Observable<LocationResponse>{
+    const url = `${this.url}/GetLocation/${value}`;
+    return this.http.get<LocationResponse>(url);
   }
 }

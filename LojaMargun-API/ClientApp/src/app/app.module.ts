@@ -7,7 +7,6 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
-
 import { CreateProductComponent } from './Components/Product/create-product/create-product.component';
 
 import { AppComponent } from './app.component';
@@ -17,16 +16,22 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { CreateCategoryComponent } from './Components/Category/create-category/create-category.component';
 import { ListProductComponent } from './Components/Product/list-product/list-product.component';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { DetailProductComponent } from './Components/Product/detailproduct/detailproduct.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateProductComponent,
     CreateCategoryComponent,
-    ListProductComponent
+    ListProductComponent,
+    DashboardComponent,
+    DetailProductComponent, 
   ],
   imports: [
     BrowserModule,
@@ -43,7 +48,9 @@ import { ListProductComponent } from './Components/Product/list-product/list-pro
     MatSelectModule,
     MatDividerModule,
     MatSnackBarModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatGridListModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

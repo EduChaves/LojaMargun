@@ -26,7 +26,7 @@ namespace LojaMargun_Infrastructure.Data.Repositories
             }
         }
 
-        public async Task<TEntity> GetById(int id)
+        public virtual async Task<TEntity> GetById(int id)
         {
             try
             {

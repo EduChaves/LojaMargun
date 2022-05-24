@@ -8,13 +8,13 @@
 }
 .divMaster{
     display: flex;
-}
-.teste{
-    margin-left: 1%;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
 }
 .moveButton{
-    /* position: absolute; */
-    /* top: 85%; */
+    position: absolute;
+    top: 89%;
     left: 60%;
 }
 .fieldlength{
@@ -23,5 +23,13 @@
 }
 .cardLength{
     width: 200px;
+    height: 335px;
     margin-left: 10%;
+    margin-top: 5%;
+}
+.fontCardHeader{
+    font-size: 18px;
+}
+.fontCardContent{
+    font-size: smaller;
 }

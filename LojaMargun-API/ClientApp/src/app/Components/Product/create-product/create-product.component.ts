@@ -32,7 +32,7 @@ export class CreateProductComponent implements OnInit {
     this.form = new FormGroup({
       name: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(50)]),
       description: new FormControl(null, [Validators.required, Validators.minLength(5), Validators.maxLength(100)]),
-      length: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(15)]),
+      length: new FormControl(null, [Validators.required, Validators.minLength(1), Validators.maxLength(15)]),
       image: new FormControl(null, [Validators.required]),
       value: new FormControl(null, [Validators.required]),
       quantity: new FormControl(null, [Validators.required]),
@@ -49,7 +49,7 @@ export class CreateProductComponent implements OnInit {
     reader.onload = ((value: any) => {
       document.getElementById("image")?.removeAttribute("hidden");
       document.getElementById("image")?.setAttribute("src", value.target?.result)
-      console.log(value.target?.result);
+      
       this.image = value.target?.result;
     });
     reader.readAsDataURL(image.target.files[0] as File);
@@ -66,6 +66,7 @@ export class CreateProductComponent implements OnInit {
     data.description = form.description;
     data.length = form.length;
     data.value = form.value;
+    data.quantity = form.quantity;
     data.image = this.image;
     data.categoryId = form.category.id;
     data.active = true;

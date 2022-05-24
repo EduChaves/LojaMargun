@@ -1,0 +1,12 @@
+.imgAlign{
+    width:60%;
+    margin-left: 25%;
+}
+.bntAddCart{
+    width: 100%;
+    background-color: rgb(116, 197, 116);
+}
+.divMaster{
+    width: 90%;
+    align-items: center;
+}

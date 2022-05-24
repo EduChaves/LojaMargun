@@ -1,4 +1,7 @@
 <div>
+    <div class="teste">
+        
+    </div>
     <h1>Produtos</h1>
     <mat-form-field class="fieldlength">
         <mat-label>Pesquisar</mat-label>
@@ -7,24 +10,25 @@
         <mat-option *ngFor="let option of filterOption | async">{{option.name}}</mat-option>
     </mat-form-field>
 
-    <div class="divMaster">
-        <br>
-        <mat-divider></mat-divider>
-        <div class="EditRows" *ngFor="let product of products">
-            <mat-card class="cardLength">
-                <img [src]="product.image" mat-card-image id="image" width="200" height="200"/>
-                <mat-card-header>
-                    <mat-card-title>{{product.name}}</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>  
-                    
-                    <p>{{product.description}}</p>
-                    <p>R${{product.value.toFixed(2)}}</p>
-                </mat-card-content>
-                <mat-card-footer class="teste1">
-                    <button class="moveButton" type="button" mat-button color="primary">Detalhes</button>
-                </mat-card-footer>
-            </mat-card>
+    <div style="justify-content: center;">
+        <div class="divMaster">
+            <br>
+            <mat-divider></mat-divider>
+                   <div class="EditRows" *ngFor="let product of products">
+                <mat-card class="cardLength">
+                    <img [src]="product.image" mat-card-image id="image" width="200" height="200"/>
+                    <mat-card-header>
+                        <mat-card-title class="fontCardHeader">{{product.name}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="fontCardContent">  
+                        <p>{{product.description}}</p>
+                        <p>R${{product.value.toFixed(2)}}</p>
+                    </mat-card-content>
+                    <mat-card-footer class="teste1">
+                        <button class="moveButton" type="button" [routerLink]="['/product/detailproduct', product.id]" mat-button color="primary">Detalhes</button>
+                    </mat-card-footer>
+                </mat-card>
+            </div>
         </div>
     </div>
 </div>

@@ -19,8 +19,4 @@
     <ProjectReference Include="..\LojaMargun-Domain\LojaMargun-Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="CrossCutting\" />
-  </ItemGroup>
-
 </Project>

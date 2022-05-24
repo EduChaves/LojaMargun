@@ -1,10 +1,3 @@
-C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\obj\Debug\net5.0\LojaMargun-API.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\obj\Debug\net5.0\LojaMargun-API.AssemblyInfoInputs.cache
-C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\obj\Debug\net5.0\LojaMargun-API.AssemblyInfo.cs
-C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\obj\Debug\net5.0\LojaMargun-API.csproj.CoreCompileInputs.cache
-C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\obj\Debug\net5.0\LojaMargun-API.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\obj\Debug\net5.0\LojaMargun-API.RazorAssemblyInfo.cache
-C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\obj\Debug\net5.0\LojaMargun-API.RazorAssemblyInfo.cs
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\bin\Debug\net5.0\appsettings.json
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\bin\Debug\net5.0\LojaMargun-API.exe
@@ -70,6 +63,13 @@ C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\bin\Debug\net5.0\LojaMarg
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\bin\Debug\net5.0\LojaMargun-Domain.pdb
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\bin\Debug\net5.0\LojaMargun-Infrastructure.pdb
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\obj\Debug\net5.0\LojaMargun-API.csproj.AssemblyReference.cache
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\obj\Debug\net5.0\LojaMargun-API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\obj\Debug\net5.0\LojaMargun-API.AssemblyInfoInputs.cache
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\obj\Debug\net5.0\LojaMargun-API.AssemblyInfo.cs
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\obj\Debug\net5.0\LojaMargun-API.csproj.CoreCompileInputs.cache
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\obj\Debug\net5.0\LojaMargun-API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\obj\Debug\net5.0\LojaMargun-API.RazorAssemblyInfo.cache
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\obj\Debug\net5.0\LojaMargun-API.RazorAssemblyInfo.cs
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\obj\Debug\net5.0\scopedcss\bundle\LojaMargun-API.styles.css
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\obj\Debug\net5.0\staticwebassets\LojaMargun-API.StaticWebAssets.Manifest.cache
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\obj\Debug\net5.0\LojaMargun-API.TagHelpers.input.cache
@@ -85,3 +85,12 @@ C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\obj\Debug\net5.0\LojaMarg
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\obj\Debug\net5.0\ref\LojaMargun-API.dll
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\obj\Debug\net5.0\LojaMargun-API.pdb
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\obj\Debug\net5.0\LojaMargun-API.genruntimeconfig.cache
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\bin\Debug\net5.0\System.Private.ServiceModel.dll
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\bin\Debug\net5.0\System.ServiceModel.Duplex.dll
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\bin\Debug\net5.0\System.ServiceModel.Http.dll
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\bin\Debug\net5.0\System.ServiceModel.NetTcp.dll
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\bin\Debug\net5.0\System.ServiceModel.Primitives.dll
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\bin\Debug\net5.0\System.ServiceModel.dll
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\bin\Debug\net5.0\System.ServiceModel.Security.dll
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\bin\Debug\net5.0\LojaMargun-Infra-CrossCutting.dll
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-API\bin\Debug\net5.0\LojaMargun-Infra-CrossCutting.pdb

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LojaMargun_Infrastructure.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220513202558_config_db")]
+    [Migration("20220523151920_config_db")]
     partial class config_db
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -170,6 +170,9 @@ namespace LojaMargun_Infrastructure.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("VARCHAR(50)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Value")
                         .HasColumnType("NUMERIC(38,2)");

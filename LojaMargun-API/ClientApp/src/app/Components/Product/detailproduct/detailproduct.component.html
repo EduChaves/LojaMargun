@@ -1,0 +1,49 @@
+<div>
+    <span>{{product.name}}</span>
+    <br><br><br>
+    <div class="divMaster">
+        <div fxFlex="50" fxLayoutAling="center end">
+            <div fxLayout="column">
+                <div>
+                    <img [src]="product.image" class="imgAlign">
+                </div>
+            </div>
+        </div>
+        <div fxFlex="50">
+            <span>Referencia: {{product.id}}</span>
+            <br><br>
+            <mat-divider></mat-divider>
+            <br><br>
+            <span>{{product.description}}</span>
+            <br><br>
+            <span>Quantidade: {{product.quantity}}</span>
+            <br><br>
+            <span>Tamanho: {{product.length}}</span>
+            <br><br>
+            <span>Categoria: {{product.category.name}}</span>
+            <br><br>
+            <span>Valor: {{product.value.toFixed(2)}}</span>
+            <br><br><br>
+            <mat-divider></mat-divider>
+            <br>
+            <mat-form-field>
+                <mat-label>Calcular Frete</mat-label>
+                <input type="text" matInput [formControl]="freightCalculate" placeholder="Insira o CEP">
+            </mat-form-field>
+            <button type="button" mat-stroked-button (click)="FindLocation()">Calcular</button>
+            <br>
+            <div *ngIf="location != null">
+                <span>{{location.address}}</span>
+                <br>
+                <span>{{location.district}}</span>
+                <br>
+                <span>{{location.city}}</span>
+                <span>{{location.state}}</span>
+            </div>
+
+            <br><br><br>
+            <mat-divider></mat-divider>
+            <button class="bntAddCart" type="button" mat-stroked-button>Adicioar ao Carrinho</button>
+        </div>
+    </div>
+</div>

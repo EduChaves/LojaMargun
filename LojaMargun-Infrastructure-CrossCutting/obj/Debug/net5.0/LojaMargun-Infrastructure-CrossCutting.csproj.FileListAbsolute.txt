@@ -1,0 +1,12 @@
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure-CrossCutting\bin\Debug\net5.0\LojaMargun-Infrastructure-CrossCutting.deps.json
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure-CrossCutting\bin\Debug\net5.0\LojaMargun-Infrastructure-CrossCutting.dll
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure-CrossCutting\bin\Debug\net5.0\ref\LojaMargun-Infrastructure-CrossCutting.dll
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure-CrossCutting\bin\Debug\net5.0\LojaMargun-Infrastructure-CrossCutting.pdb
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure-CrossCutting\obj\Debug\net5.0\LojaMargun-Infrastructure-CrossCutting.csproj.AssemblyReference.cache
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure-CrossCutting\obj\Debug\net5.0\LojaMargun-Infrastructure-CrossCutting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure-CrossCutting\obj\Debug\net5.0\LojaMargun-Infrastructure-CrossCutting.AssemblyInfoInputs.cache
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure-CrossCutting\obj\Debug\net5.0\LojaMargun-Infrastructure-CrossCutting.AssemblyInfo.cs
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure-CrossCutting\obj\Debug\net5.0\LojaMargun-Infrastructure-CrossCutting.csproj.CoreCompileInputs.cache
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure-CrossCutting\obj\Debug\net5.0\LojaMargun-Infrastructure-CrossCutting.dll
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure-CrossCutting\obj\Debug\net5.0\ref\LojaMargun-Infrastructure-CrossCutting.dll
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure-CrossCutting\obj\Debug\net5.0\LojaMargun-Infrastructure-CrossCutting.pdb

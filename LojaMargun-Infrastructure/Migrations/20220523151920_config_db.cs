@@ -61,6 +61,7 @@ namespace LojaMargun_Infrastructure.Migrations
                     Length = table.Column<string>(type: "VARCHAR(20)", maxLength: 20, nullable: false),
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Value = table.Column<decimal>(type: "NUMERIC(38,2)", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
                     Active = table.Column<bool>(type: "bit", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
                     BagId = table.Column<int>(type: "int", nullable: true)

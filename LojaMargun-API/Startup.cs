@@ -2,6 +2,8 @@ using LojaMargun_Application.AutoMapper;
 using LojaMargun_Application.Services;
 using LojaMargun_Domain.Core.Interfaces.Repositories;
 using LojaMargun_Domain.Core.Interfaces.Services;
+using LojaMargun_Infra_CrossCutting.Connected_Services.CorreiosApi;
+using LojaMargun_Infra_CrossCutting.Connected_Services.Interfaces.CorreiosApi;
 using LojaMargun_Infrastructure.Data;
 using LojaMargun_Infrastructure.Data.Repositories;
 using Microsoft.AspNetCore.Builder;
@@ -36,7 +38,8 @@ namespace LojaMargun_API
 
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
-            //services.AddScoped<IProductService, ProductService>
+
+            services.AddScoped<ICorreiosApiConfig, CorreiosApiConfig>();
 
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();

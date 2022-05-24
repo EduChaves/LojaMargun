@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LojaMargun-Domain", "LojaMa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LojaMargun-Infrastructure", "LojaMargun-Infrastructure\LojaMargun-Infrastructure.csproj", "{FE3A8E4B-367B-4147-8531-02FF2A67B87E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaMargun-API", "LojaMargun-API\LojaMargun-API.csproj", "{2BB7D132-6A7E-42D0-B237-90F9F47C7A79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LojaMargun-API", "LojaMargun-API\LojaMargun-API.csproj", "{2BB7D132-6A7E-42D0-B237-90F9F47C7A79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LojaMargun-Infra-CrossCutting", "LojaMargun-Infra-CrossCutting\LojaMargun-Infra-CrossCutting.csproj", "{9B25C7FA-53A5-44DA-BB34-AEA0C292B5C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{2BB7D132-6A7E-42D0-B237-90F9F47C7A79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BB7D132-6A7E-42D0-B237-90F9F47C7A79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BB7D132-6A7E-42D0-B237-90F9F47C7A79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B25C7FA-53A5-44DA-BB34-AEA0C292B5C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B25C7FA-53A5-44DA-BB34-AEA0C292B5C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B25C7FA-53A5-44DA-BB34-AEA0C292B5C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B25C7FA-53A5-44DA-BB34-AEA0C292B5C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

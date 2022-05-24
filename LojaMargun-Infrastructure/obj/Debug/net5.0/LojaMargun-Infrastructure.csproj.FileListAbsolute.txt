@@ -16,10 +16,6 @@ E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaM
 E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\ref\LojaMargun-Infrastructure.dll
 E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.pdb
 E:\things\dev\Margun\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.genruntimeconfig.cache
-C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.AssemblyInfoInputs.cache
-C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.AssemblyInfo.cs
-C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.csproj.CoreCompileInputs.cache
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure\bin\Debug\net5.0\LojaMargun-Infrastructure.deps.json
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure\bin\Debug\net5.0\LojaMargun-Infrastructure.runtimeconfig.json
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure\bin\Debug\net5.0\LojaMargun-Infrastructure.runtimeconfig.dev.json
@@ -29,6 +25,10 @@ C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure\bin\Debug\net5
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure\bin\Debug\net5.0\LojaMargun-Domain.dll
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure\bin\Debug\net5.0\LojaMargun-Domain.pdb
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.csproj.AssemblyReference.cache
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.AssemblyInfoInputs.cache
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.AssemblyInfo.cs
+C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.csproj.CoreCompileInputs.cache
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.csproj.CopyComplete
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\LojaMargun-Infrastructure.dll
 C:\Users\chave\Documents\dev\LojaMargun\LojaMargun-Infrastructure\obj\Debug\net5.0\ref\LojaMargun-Infrastructure.dll

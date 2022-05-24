@@ -169,6 +169,9 @@ namespace LojaMargun_Infrastructure.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("VARCHAR(50)");
 
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("Value")
                         .HasColumnType("NUMERIC(38,2)");
 
