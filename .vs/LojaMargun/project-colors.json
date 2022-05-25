@@ -25,7 +25,17 @@
       "ProjectGuid": "4a2645de-3430-46fc-a779-ea8e05c8c78e",
       "DisplayName": "LojaMargun-Application",
       "ColorIndex": 3
+    },
+    "1095568a-defb-498e-99b1-335c40a31ddc": {
+      "ProjectGuid": "1095568a-defb-498e-99b1-335c40a31ddc",
+      "DisplayName": "LojaMargun-Infrastructure-CrossCutting",
+      "ColorIndex": 4
+    },
+    "9b25c7fa-53a5-44da-bb34-aea0c292b5c2": {
+      "ProjectGuid": "9b25c7fa-53a5-44da-bb34-aea0c292b5c2",
+      "DisplayName": "LojaMargun-Infra-CrossCutting",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 6
 }

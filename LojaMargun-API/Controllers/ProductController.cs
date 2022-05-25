@@ -31,7 +31,7 @@ namespace LojaMargun_API.Controllers
         [HttpGet("GetLocation/{value}")]
         public async Task<CorreiosResponse> GetLocation(string value)
         {
-            return await _correiosApi.FindLocation(value);
+            return await _correiosApi.FreightCalculate(value);
         }
 
         [HttpPost]

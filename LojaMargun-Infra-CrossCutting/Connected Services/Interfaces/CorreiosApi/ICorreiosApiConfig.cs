@@ -6,5 +6,6 @@ namespace LojaMargun_Infra_CrossCutting.Connected_Services.Interfaces.CorreiosAp
     public interface ICorreiosApiConfig
     {
         public Task<CorreiosResponse> FindLocation(string value);
+        public Task<CorreiosResponse> FreightCalculate(string value);
     }
 }

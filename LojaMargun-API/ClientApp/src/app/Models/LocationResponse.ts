@@ -3,4 +3,6 @@ export class LocationResponse{
     district!: string;
     city!: string;
     state!: string;
+    arrivelTime!: string;
+    value!: string
 }
