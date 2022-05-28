@@ -10,3 +10,10 @@
     width: 90%;
     align-items: center;
 }
+.textTitle{
+    font-size: xx-large;
+    margin-left: 2%;
+}
+.btnCalcFrete{
+    margin-left: 4%;
+}
